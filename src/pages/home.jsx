@@ -1,10 +1,14 @@
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { UserContext } from "../components/usercontext";
 
 export default function Home() {
+  const {userData} = useContext(UserContext)
+  console.log(userData)
   return (
     <div className="min-h-[calc(100vh-56px)] flex flex-col items-center justify-center text-center bg-gradient-to-r from-indigo-300 via-purple-300 to-pink-300 px-4 py-12">
-      <h1 className="text-5xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-500">
-        Welcome to TaskMaster
+      <h1 className="text-5xl p-2 font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-500">
+        Welcome to TaskMaster : {userData.name}
       </h1>
       
       <p className="max-w-xl mb-8 text-lg text-gray-700">
